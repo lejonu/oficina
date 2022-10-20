@@ -26,3 +26,15 @@ INSERT INTO `oficina`.`Ordem_de_Servico` (`idCliente`, `renavan`, `idEquipe`, `d
 INSERT INTO `oficina`.`Ordem_de_Servico` (`idCliente`, `renavan`, `idEquipe`, `dataEmissao`, `dataEntrega`) VALUES ('1', '45119519119','1','2022-10-14', '2022-10-21');
 INSERT INTO `oficina`.`Ordem_de_Servico` (`idCliente`, `renavan`, `idEquipe`, `dataEmissao`, `dataEntrega`) VALUES ('1', '59979174104','1', '2022-10-14', '2022-10-21');
 
+-- Peças
+INSERT INTO `oficina`.`Peca` (`nome`, `valor`) VALUES ('Repimboca da Parafuseta', '1');
+INSERT INTO `oficina`.`Ordem_de_Servico_has_Peca` (`idCliente`, `renavan`, `idEquipe`, `idPeca`) VALUES ('1', '37576433178', '1', '1');
+
+-- Mão de Obra
+INSERT INTO `oficina`.`Mao_de_Obra` (`nome`, `valor`) VALUES ('Troca da repimboca da parafuseta', '25');
+INSERT INTO `oficina`.`Ordem_de_Servico_has_Mao_de_Obra` (`idCliente`, `renavan`, `idEquipe`, `idMao_de_Obra`) VALUES ('1', '37576433178', '1', '1');
+
+UPDATE `oficina`.`Ordem_de_Servico` SET `status` = 'AVALIADO' WHERE (`idCliente` = '1') and (`renavan` = '37576433178') and (`idEquipe` = '1');
+UPDATE `oficina`.`Ordem_de_Servico` SET `status` = 'APROVADO' WHERE (`idCliente` = '1') and (`renavan` = '37576433178') and (`idEquipe` = '1');
+UPDATE `oficina`.`Ordem_de_Servico` SET `status` = 'CONCLUIDO' WHERE (`idCliente` = '1') and (`renavan` = '37576433178') and (`idEquipe` = '1');
+
